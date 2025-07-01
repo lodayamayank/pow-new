@@ -1,0 +1,6 @@
+export { default as generalpaths } from './general'
+export { default as userspaths } from './users'
+export { default as masterdatapaths } from './masterdata'
+export { default as clientspaths } from './clients'
+export { default as tradedatapaths } from './tradedata'
+export { default as reportspaths } from './reports'

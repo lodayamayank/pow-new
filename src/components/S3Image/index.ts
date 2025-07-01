@@ -1,0 +1,1 @@
+export { default as S3Image } from './S3Image'

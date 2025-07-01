@@ -1,0 +1,1 @@
+export {default as ReportsWeekly} from './Landing'

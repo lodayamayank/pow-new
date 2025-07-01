@@ -1,0 +1,5 @@
+export { default as ClientsList } from './List'
+export { default as ClientsCreate } from './Create' 
+export { default as ClientsUpdate } from './Update'
+export { default as ClientDetails } from './Details'
+export { default as ClientAdjustmentsUpload} from './Adjustments'

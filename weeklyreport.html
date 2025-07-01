@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Trading Report</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col">
+                <h1>Client: John Doe</h1>
+                <p>Account Number: 1234567890</p>
+                <p>Report for 02 March - 29 March 2024</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="container mt-4">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card text-white bg-primary">
+                    <div class="card-header">Total AUM</div>
+                    <div class="card-body">
+                        <h5 class="card-title">$8,000,000</h5>
+                        <p class="card-text">Assets Under Management</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-success">
+                    <div class="card-header">Total Profit/Loss</div>
+                    <div class="card-body">
+                        <h5 class="card-title">+$50,000</h5>
+                        <p class="card-text">Overall performance this month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-danger">
+                    <div class="card-header">Alerts</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Attention Needed</h5>
+                        <p class="card-text">Review investment strategy for upcoming month.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Weekly Data Section -->
+    <div class="container mt-4">
+        <h2>Weekly Performance</h2>
+        <div class="accordion" id="weeklyPerformanceAccordion">
+            <!-- Dynamically add weeks here. Example with three weeks. -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingCurrentWeek">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCurrentWeek" aria-expanded="true" aria-controls="collapseCurrentWeek">
+                        Current Week: 23 - 29 March 2024 (Highlighted)
+                    </button>
+                </h2>
+                <div id="collapseCurrentWeek" class="accordion-collapse collapse show" aria-labelledby="headingCurrentWeek" data-bs-parent="#weeklyPerformanceAccordion">
+                    <div class="accordion-body">
+                        <strong>Summary:</strong> $2,100,000 AUM, +$7,000 Profit.
+                        <!-- Placeholder for Chart -->
+                        <div>Chart: [Insert Chart Here]</div>
+                        <!-- Example Table -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Investment A</td>
+                                    <td>$1,050,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Investment B</td>
+                                    <td>$1,050,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingPreviousWeek1">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePreviousWeek1" aria-expanded="false" aria-controls="collapsePreviousWeek1">
+                        Previous Week: 16 - 22 March 2024
+                    </button>
+                </h2>
+                <div id="collapsePreviousWeek1" class="accordion-collapse collapse" aria-labelledby="headingPreviousWeek1" data-bs-parent="#weeklyPerformanceAccordion">
+                    <div class="accordion-body">
+                        <strong>Summary:</strong> $2,050,000 AUM, +$6,500 Profit.
+                        <!-- Placeholder for Chart -->
+                        <div>Chart: [Insert Chart Here]</div>
+                        <!-- Example Table -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th
+                                    <th scope="col">Item</th>
+                                    <th scope="col">Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Investment C</td>
+                                    <td>$1,025,000</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Investment D</td>
+                                    <td>$1,025,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more weeks as needed -->
+        </div>
+    </div>
+
+    <!-- Export Options -->
+    <div class="container mt-4">
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary">Export as PDF</button>
+            <button type="button" class="btn btn-secondary">Download Excel</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
