@@ -116,13 +116,15 @@ function List() {
                           <table className="table card-table table-vcenter text-nowrap datatable">
                             <thead>
                               <tr>
-                                <th>Personal Details</th>
-                                <th>PAN</th>
-                                <th>DOB</th>
-                                {/* <th>Nominee</th> */}
+                                <th>Client Code</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Latest AUM</th>
+                                <th>Last Settlement Date</th>
+                                <th>Start Date</th>
                                 <th>Weekly Report</th>
                                 <th>Status</th>
-                                <th>Created</th>
                                 <th></th>
                               </tr>
                             </thead>
@@ -131,17 +133,27 @@ function List() {
                                   records.map((record) => (
                                 <tr>
                                   <td className='cursor-pointer hover:text-primary' onClick={() => navigate('/clients/details/'+record.uuid)}>
+                                    <span className="text-blue font-weight-medium">{record.clientCode || 'N/A'}</span>
+                                  </td>
+                                  <td className='cursor-pointer hover:text-primary' onClick={() => navigate('/clients/details/'+record.uuid)}>
                                     <div className="d-flex py-1 align-items-center">
                                       <span className="avatar me-2">{record.name[0]}</span>
                                       <div className="flex-fill">
-                                        <div className="font-weight-medium text-blue">{record.name} ({record.nickname})</div>
-                                        <div className="text-secondary text-blue"><span className="text-reset">{record.mobile}, {record.email}</span></div>
+                                        <div className="font-weight-medium text-blue">{record.name}</div>
                                       </div>
                                     </div>
                                   </td>
-                                  <td>{record.pan}</td>
-                                  <td>{moment(record.dob).format("DD-MM-YYYY")}</td>
-                                  {/* <td>{record.nomineeName}</td> */}
+                                  <td>{record.email}</td>
+                                  <td>{record.mobile}</td>
+                                  <td>
+                                    <span className="text-sm text-gray-600 dark:text-gray-400">{record.latestAUM ? record.latestAUM.toLocaleString('en-US') : 'N/A'}</span>
+                                  </td>
+                                  <td>
+                                    <span className="text-sm text-gray-600 dark:text-gray-400">{record.lastSettlementDate ? moment(record.lastSettlementDate).format("DD-MM-YYYY") : 'N/A'}</span>
+                                  </td>
+                                  <td>
+                                    <span className="text-sm text-gray-600 dark:text-gray-400">{record.startDate ? moment(record.startDate).format("DD-MM-YYYY") : 'N/A'}</span>
+                                  </td>
                                   <td>
                                     {record.weeklyReport ? (
                                       <div><span className="badge bg-success me-1"></span> Yes</div> 
@@ -155,9 +167,6 @@ function List() {
                                     ) : (
                                     <div><span className="badge bg-danger me-1"></span> Inactive</div>
                                     )}
-                                  </td>
-                                  <td>
-                                    <span className="text-sm text-gray-600 dark:text-gray-400">{record.persistable ? moment(record.persistable?.created_at).format("D MMM YYYY, h:mma") : ''}</span>
                                   </td>
                                   <td className="text-end">
                                     <CanAccess permissions={['update_clients']}>
@@ -214,4 +223,4 @@ function List() {
   )
 }
 
-export default List
+export default List;
