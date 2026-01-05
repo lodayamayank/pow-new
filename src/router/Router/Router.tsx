@@ -4,7 +4,7 @@ import { useRoutePaths } from '@/hooks'
 import { Home, Login, Register, Users, UpdateUser, CreateUser, RolesPermissions, MasterDataBrokersCreate, MasterDataBrokersList, MasterDataBrokersUpdate, ClientDetails, ClientsCreate, ClientsList, ClientsUpdate, TradeDataLedgerLanding, TradeDataPortfolioValueLanding, TradeDataFnOProfitsLanding, TradeDataETFGainsLanding, ClientAdjustmentsUpload } from '@/pages'
 import { PrivateRoute } from '../PrivateRoute'
 import { PublicRoute } from '../PublicRoute'
-import { ReportsMonthly, ReportsWeekly } from '@/pages/Reports';
+import { ReportsMonthly, ReportsWeekly,ClientsReport } from '@/pages/Reports';
 import { ReportsHTMLURLs } from '@/pages/Reports/HtmlURLs';
 import { ClientAUMLanding, ClientGroupsCreate, ClientGroupsList, ClientGroupsUpdate, ClientProfitsUpload, ClientUploadAUMs } from '@/pages/Clients/components';
 
@@ -39,7 +39,8 @@ function Router() {
     TRADEDATA_ETFS_VALUE_PATH,
     REPORTS_WEEKLY_PATH,
     REPORTS_MONTHLY_PATH,
-    REPORTS_HTMLURLS_PATH
+    REPORTS_HTMLURLS_PATH,
+    REPORTS_CLIENTREPORT_PATH
   } = useRoutePaths()
 
   return (
@@ -269,6 +270,15 @@ function Router() {
         element={
           <PrivateRoute permissions={['update_clients']}>
             <ReportsWeekly />
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path={REPORTS_CLIENTREPORT_PATH}
+        element={
+          <PrivateRoute permissions={['update_clients']}>
+            <ClientsReport />
           </PrivateRoute>
         }
       />

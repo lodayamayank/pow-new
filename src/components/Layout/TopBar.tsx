@@ -147,6 +147,14 @@ export default function TopBar(props: Props) {
             permissions: ['view_clients'],
             icon: ``
           },
+          {
+            name: 'Client Reports',
+            href: '/reports/clientreport',
+            current: matchCurrentRoute(['/reports/clientreport']),
+            permissions: ['view_clients'],
+            icon: ``,
+          
+          },
         ]
       },{ 
         name: 'Master Data', 
