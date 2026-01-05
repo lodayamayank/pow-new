@@ -17,6 +17,12 @@ const getAllTradeData = (body: any): Promise<any> => {
     .catch((reason: AxiosError<any>) => reason?.response)
 }
 
+const getAnnualReportAPI = (body: any): Promise<AxiosResponse<any>> => {
+  return api
+    .post(`${TRADEDATA_API_URL}/clientAnnualreport`, body)
+    .catch((reason: AxiosError<any>) => reason?.response)
+}
+
 const getHTMLURLs = (): Promise<any> => {
   return api
     .get(`${TRADEDATA_API_URL}/htmlreports`)
@@ -25,5 +31,6 @@ const getHTMLURLs = (): Promise<any> => {
 
 export {
   getAllTradeData,
-  getHTMLURLs
+  getHTMLURLs,
+  getAnnualReportAPI
 }
