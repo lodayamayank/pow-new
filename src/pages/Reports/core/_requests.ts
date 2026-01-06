@@ -19,7 +19,7 @@ const getAllTradeData = (body: any): Promise<any> => {
 
 const getAnnualReportAPI = (body: any): Promise<AxiosResponse<any>> => {
   return api
-    .post(`${TRADEDATA_API_URL}/clientAnnualreport`, body)
+    .post(`${TRADEDATA_API_URL}/clientreport`, body)
     .catch((reason: AxiosError<any>) => reason?.response)
 }
 
